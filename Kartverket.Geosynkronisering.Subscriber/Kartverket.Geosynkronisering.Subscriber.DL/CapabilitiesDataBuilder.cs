@@ -42,10 +42,10 @@ namespace Kartverket.Geosynkronisering.Subscriber.DL
                 {
                     ProviderDatasetId = dst.datasetId.Trim(),
                     Name = dst.name.Trim(),
-                    Version = client.GetDatasetVersion(dst.datasetId).Trim(),
+                    Version = dst.version.Trim(),
                     Tolerance = precision.tolerance,
-                    EpsgCode = precision.epsgCode,
-                    Decimals = precision.decimals
+                    EpsgCode = precision.epsgCode.Trim(),
+                    Decimals = precision.decimals.Trim()
                 };
 
                 var dt = GetConstraint("CountDefault", rootCapabilities.OperationsMetadata.Constraint);
