@@ -40,7 +40,7 @@ namespace Kartverket.Geosynkronisering.ChangelogProviders
             }
             catch (System.Exception exp)
             {
-                Logger.ErrorException("GetLastIndex Exception:", exp);
+                Logger.Error(exp,"GetLastIndex Exception:");
                 throw new System.Exception("GetLastIndex function failed", exp);
             }
 
@@ -81,7 +81,7 @@ namespace Kartverket.Geosynkronisering.ChangelogProviders
             }
             catch (System.Exception exp)
             {
-                Logger.ErrorException("MakeChangeLog function failed:", exp);
+                Logger.Error(exp,"MakeChangeLog function failed:");
                 throw new System.Exception("MakeChangeLog function failed", exp);
             }
             Logger.Info("MakeChangeLog END");
@@ -145,7 +145,7 @@ namespace Kartverket.Geosynkronisering.ChangelogProviders
             }
             catch (System.Exception exp)
             {
-                Logger.ErrorException("FillOptimizedChangeLog function failed:", exp);
+                Logger.Error(exp,"FillOptimizedChangeLog function failed:");
                 throw new System.Exception("FillOptimizedChangeLog function failed", exp);
             }
             Logger.Info("FillOptimizedChangeLog END");
@@ -174,7 +174,7 @@ namespace Kartverket.Geosynkronisering.ChangelogProviders
             }
             catch (System.Exception exp)
             {
-                Logger.ErrorException("PrepareChangeLogQuery function failed:", exp);
+                Logger.Error(exp,"PrepareChangeLogQuery function failed:");
                 throw new System.Exception("PrepareChangeLogQuery function failed", exp);
             }
             Logger.Info("PrepareChangeLogQuery END");
@@ -199,7 +199,7 @@ namespace Kartverket.Geosynkronisering.ChangelogProviders
             }
             catch (System.Exception exp)
             {
-                Logger.ErrorException("GetMaxChangeLogId function failed:", exp);
+                Logger.Error(exp,"GetMaxChangeLogId function failed:");
                 throw new System.Exception("GetMaxChangeLogId function failed", exp);
             }
         }       

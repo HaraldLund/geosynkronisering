@@ -116,7 +116,7 @@ namespace Kartverket.Geosynkronisering
 
             var result = (from c in db.StoredChangelogs where c.ChangelogId == nchangelogid select c);
             
-            Kartverket.GeosyncWCF.ChangelogStatusType resp = new GeosyncWCF.ChangelogStatusType();
+            //Kartverket.GeosyncWCF.ChangelogStatusType resp = new GeosyncWCF.ChangelogStatusType();
             if (result.Count() > 0)
             {
                 var changelog = result.First();
@@ -215,6 +215,7 @@ namespace Kartverket.Geosynkronisering
             }
             catch (Exception ex)
             {
+                
                 return false;
             }
            

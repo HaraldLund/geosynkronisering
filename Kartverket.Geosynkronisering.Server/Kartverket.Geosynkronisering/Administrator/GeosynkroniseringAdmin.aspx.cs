@@ -16,26 +16,26 @@ namespace Kartverket.Geosynkronisering
             switch (e.CommandName)
             {
                 case "First":
-                    if (e.CommandArgument == "DL") vDataset.PageIndex = 0;
+                    if (e.CommandArgument as string == "DL") vDataset.PageIndex = 0;
                     else gwStoredChangeLogs.PageIndex = 0;
                     break;
 
                 case "Prev":
-                    if (e.CommandArgument == "DL")
+                    if (e.CommandArgument as string == "DL")
                     if (vDataset.PageIndex > 0) vDataset.PageIndex = vDataset.PageIndex - 1;
                     else if (gwStoredChangeLogs.PageIndex > 0)
                             gwStoredChangeLogs.PageIndex = gwStoredChangeLogs.PageIndex - 1;
                     break;
 
                 case "Next":
-                    if (e.CommandArgument == "DL")
+                    if (e.CommandArgument as string == "DL")
                     if (vDataset.PageIndex < vDataset.PageCount - 1) vDataset.PageIndex = vDataset.PageIndex + 1;
                     else if (gwStoredChangeLogs.PageIndex < gwStoredChangeLogs.PageCount - 1)
                             gwStoredChangeLogs.PageIndex = gwStoredChangeLogs.PageIndex + 1;
                     break;
 
                 case "Last":
-                    if (e.CommandArgument == "DL") vDataset.PageIndex = vDataset.PageCount - 1;
+                    if (e.CommandArgument as string == "DL") vDataset.PageIndex = vDataset.PageCount - 1;
                     else gwStoredChangeLogs.PageIndex = gwStoredChangeLogs.PageCount - 1;
                     break;
             }
